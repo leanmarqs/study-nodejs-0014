@@ -35,7 +35,7 @@ app.post('/users', async (req, res) => {
     })
 
   } catch (error) {
-    res.status(500).json({ error: 'Failed to create user' })
+    res.status(500).json({ error: 'Failed to create user.' + error.message })
 
   }
 })
@@ -51,8 +51,8 @@ app.get('/users', async (req, res) => {
     })
     res.json(users)
 
-    } catch (error) {   
-    res.status(500).json({ error: 'Failed to retrieve users' })
+    } catch (error) {
+    res.status(500).json({ error: 'Failed to retrieve users.' + error.message })
 
   }
 })
